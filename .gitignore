@@ -1,6 +1,7 @@
 # Dependências e saídas de build
 node_modules/
 dist/
+public/
 build/
 
 # Variáveis de ambiente e segredos

@@ -70,7 +70,8 @@ Exemplo com 200 m³ (160 g): **2 × 80 g** (excedente 0 g) e **1 × 200 g** (exc
 │   └── calculadora.test.js
 ├── scripts/
 │   ├── servidor.js       # servidor local (npm start)
-│   └── build.js          # gera o arquivo único para publicação (npm run build)
+│   └── build.js          # gera public/ e o arquivo único (npm run build)
+├── vercel.json           # configuração de publicação na Vercel
 ├── CHANGELOG.md
 └── package.json
 ```
@@ -97,20 +98,27 @@ Depois acesse http://localhost:5173.
 npm test
 ```
 
-**Arquivo único para publicação**
+**Build para publicação**
 
 ```bash
 npm run build
 ```
 
-O comando gera `dist/calculadora-ultrad-ha.html`, com HTML, CSS e JavaScript embutidos. A pasta `dist/` não é versionada.
+O comando roda os testes e gera:
+
+- `public/`: o site publicado pela Vercel.
+- `dist/calculadora-ultrad-ha.html`: um único arquivo com HTML, CSS e JavaScript embutidos.
+
+As duas pastas são geradas e não são versionadas.
 
 ## Publicação (Vercel)
 
 O projeto está conectado à Vercel pelo GitHub. Cada push na `main` gera uma nova publicação. A configuração fica no [vercel.json](vercel.json):
 
-- **Comando de build:** `npm test`. Se algum teste de cálculo falhar, a publicação é cancelada.
-- **Pasta publicada:** `src/`.
+- **Comando de build:** `npm run build`. Ele roda os testes e, se algum teste de cálculo falhar, a publicação é cancelada.
+- **Pasta publicada:** `public/`, gerada pelo build a partir de `src/`. Por ser gerada, não é versionada.
+
+Como `public/` é a pasta padrão da Vercel, a publicação funciona mesmo sem o `vercel.json`.
 
 ## Versionamento
 

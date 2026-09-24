@@ -7,7 +7,10 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), e
 ## [Não lançado]
 
 ### Adicionado
-- Configuração de publicação na Vercel (`vercel.json`): publica a pasta `src/` e roda os testes antes de cada publicação.
+- Configuração de publicação na Vercel (`vercel.json`).
+
+### Corrigido
+- Erro "No Output Directory named public" na Vercel. O `npm run build` agora roda os testes e gera a pasta `public/` a partir de `src/`.
 
 ## [1.0.0] - 2026-09-24
 
