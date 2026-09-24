@@ -4,7 +4,9 @@ Todas as mudanças relevantes deste projeto são registradas aqui.
 
 O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), e o projeto usa [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
-## [Não lançado]
+## [1.0.1] - 2026-09-24
+
+Publicação na Vercel: https://calculadora-ultrad.vercel.app
 
 ### Adicionado
 - Configuração de publicação na Vercel (`vercel.json`).
@@ -30,4 +32,5 @@ Primeira versão estável.
 - Testes automatizados com os exemplos da especificação.
 - Script de build que gera um arquivo HTML único para publicação.
 
+[1.0.1]: https://github.com/RafaelAlves-Fermentech/calculadora-ultrad/releases/tag/v1.0.1
 [1.0.0]: https://github.com/RafaelAlves-Fermentech/calculadora-ultrad/releases/tag/v1.0.0

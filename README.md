@@ -113,6 +113,8 @@ As duas pastas são geradas e não são versionadas.
 
 ## Publicação (Vercel)
 
+**Endereço:** https://calculadora-ultrad.vercel.app
+
 O projeto está conectado à Vercel pelo GitHub. Cada push na `main` gera uma nova publicação. A configuração fica no [vercel.json](vercel.json):
 
 - **Comando de build:** `npm run build`. Ele roda os testes e, se algum teste de cálculo falhar, a publicação é cancelada.
