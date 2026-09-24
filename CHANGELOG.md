@@ -4,6 +4,11 @@ Todas as mudanças relevantes deste projeto são registradas aqui.
 
 O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), e o projeto usa [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [Não lançado]
+
+### Adicionado
+- Configuração de publicação na Vercel (`vercel.json`): publica a pasta `src/` e roda os testes antes de cada publicação.
+
 ## [1.0.0] - 2026-09-24
 
 Primeira versão estável.

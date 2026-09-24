@@ -105,6 +105,13 @@ npm run build
 
 O comando gera `dist/calculadora-ultrad-ha.html`, com HTML, CSS e JavaScript embutidos. A pasta `dist/` não é versionada.
 
+## Publicação (Vercel)
+
+O projeto está conectado à Vercel pelo GitHub. Cada push na `main` gera uma nova publicação. A configuração fica no [vercel.json](vercel.json):
+
+- **Comando de build:** `npm test`. Se algum teste de cálculo falhar, a publicação é cancelada.
+- **Pasta publicada:** `src/`.
+
 ## Versionamento
 
 O projeto usa **Git** para o controle de versões e o **GitHub** como repositório remoto. O histórico do Git é o registro oficial do projeto: não são criadas cópias manuais (`_v2`, `_final`, etc.).
