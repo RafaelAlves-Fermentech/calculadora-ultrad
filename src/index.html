@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora ULTRAD® HA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <span class="marca">fermentech</span>
+      <span class="topo-produto">ULTRAD<sup>®</sup> HA · Kersia</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h1>Calculadora ULTRAD<sup>®</sup> HA</h1>
+      <p>Calcule rapidamente a quantidade de ULTRAD<sup>®</sup> HA necessária para o ambiente.</p>
+    </section>
+
+    <form id="form" class="card entrada" novalidate>
+      <h2 class="etapa"><span class="num">1</span> Como deseja informar o ambiente?</h2>
+
+      <div class="modo" role="tablist" aria-label="Forma de informar o ambiente">
+        <button type="button" class="modo-btn ativo" role="tab" aria-selected="true" data-modo="dimensoes">
+          Informar dimensões
+          <small>Altura × comprimento × largura</small>
+        </button>
+        <button type="button" class="modo-btn" role="tab" aria-selected="false" data-modo="volume">
+          Informar volume
+          <small>Já sei o volume em m³</small>
+        </button>
+      </div>
+
+      <div class="campos" id="campos-dimensoes">
+        <label class="campo">
+          <span>Altura / Pé-direito</span>
+          <div class="input-un"><input type="text" inputmode="decimal" id="altura" autocomplete="off" placeholder="0,00"><em>m</em></div>
+        </label>
+        <label class="campo">
+          <span>Comprimento</span>
+          <div class="input-un"><input type="text" inputmode="decimal" id="comprimento" autocomplete="off" placeholder="0,00"><em>m</em></div>
+        </label>
+        <label class="campo">
+          <span>Largura</span>
+          <div class="input-un"><input type="text" inputmode="decimal" id="largura" autocomplete="off" placeholder="0,00"><em>m</em></div>
+        </label>
+      </div>
+
+      <div class="campos campos-1" id="campos-volume" hidden>
+        <label class="campo">
+          <span>Volume do ambiente</span>
+          <div class="input-un"><input type="text" inputmode="decimal" id="volume" autocomplete="off" placeholder="0,00"><em>m³</em></div>
+        </label>
+      </div>
+
+      <p class="erro" id="erro" role="alert" hidden></p>
+
+      <div class="acoes">
+        <button type="submit" class="btn btn-primario">Calcular</button>
+        <button type="button" class="btn btn-secundario" id="novo">Novo cálculo</button>
+      </div>
+    </form>
+
+    <section id="resultado" class="resultado" hidden aria-live="polite">
+      <div class="kpis">
+        <div class="kpi">
+          <span class="kpi-rotulo">Volume do ambiente</span>
+          <strong class="kpi-valor" id="r-volume"></strong>
+          <span class="kpi-detalhe" id="r-volume-detalhe"></span>
+        </div>
+        <div class="kpi kpi-destaque">
+          <span class="kpi-rotulo">Necessidade calculada</span>
+          <strong class="kpi-valor" id="r-necessidade"></strong>
+          <span class="kpi-detalhe">de ULTRAD<sup>®</sup> HA</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi-rotulo">Dosagem utilizada</span>
+          <strong class="kpi-valor">0,8 g/m³</strong>
+          <span class="kpi-detalhe">1 m³ = 0,8 g</span>
+        </div>
+      </div>
+
+      <div class="aviso" id="r-aviso" hidden></div>
+
+      <h2 class="titulo-secao">Sugestões de aplicação</h2>
+      <div class="opcoes" id="r-opcoes"></div>
+    </section>
+
+    <details class="referencia">
+      <summary>Apresentações disponíveis</summary>
+      <table>
+        <thead><tr><th>Apresentação</th><th>Cobertura</th></tr></thead>
+        <tbody>
+          <tr><td>80 g</td><td>100 m³</td></tr>
+          <tr><td>200 g</td><td>250 m³</td></tr>
+          <tr><td>400 g</td><td>500 m³</td></tr>
+          <tr><td>1.000 g</td><td>1.250 m³</td></tr>
+        </tbody>
+      </table>
+    </details>
+  </main>
+
+  <footer class="rodape">
+    Ferramenta de apoio comercial · Cálculo matemático baseado na dosagem de 0,8 g/m³
+  </footer>
+
+  <script src="calculadora.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
